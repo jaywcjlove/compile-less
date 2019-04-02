@@ -13,11 +13,13 @@ program
 program
   .option('-d, --dir <dir-path>', 'Less file directory', 'src')
   .option('-o, --out <dir-path>', 'Output directory.')
+  .option('-c, --combine <file-name>', 'Combine CSS files.')
 
 program.on('--help', () => {
   logs('\n  Examples:');
   logs();
-  logs(`  $ compile-less -d src -o css`);
+  logs('  $ compile-less -d src -o css');
+  logs('  $ compile-less -d src -o out --combine out/dist.css');
   logs();
   logs();
 })
@@ -27,5 +29,8 @@ program.parse(process.argv);
 if (!program.out || !program.dir) {
   program.outputHelp();
 } else {
-  compile(program.dir, program.out);
+  compile(program.dir, {
+    out: program.out,
+    combine: program.combine,
+  });
 }

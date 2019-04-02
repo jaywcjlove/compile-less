@@ -1,6 +1,7 @@
 coverage/
 test/
 src
+tsconfig.json
 
 .DS_Store
 .babelrc
