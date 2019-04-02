@@ -39,6 +39,7 @@ Options:
   Examples:
 
   $ compile-less -d src -o css
+  $ compile-less -d src -o out --combine out/dist.css
 ```
 
 ### Development
