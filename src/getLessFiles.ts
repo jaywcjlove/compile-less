@@ -19,15 +19,3 @@ export function getLessFiles(folder: string) {
     resolve(lessPaths);
   });
 }
-
-// module.exports = function getLessFiles(folder: string) {
-//   return new Promise((resolve, reject) => {
-//     const lessPaths: any[] | undefined = [];
-//     dirTree(folder, {
-//       extensions: /\.(less)$/
-//     }, (item: IDirTreeItem) => {
-//       lessPaths.push(item.path);
-//     });
-//     resolve(lessPaths);
-//   });
-// }

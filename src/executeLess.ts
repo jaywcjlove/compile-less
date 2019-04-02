@@ -11,7 +11,6 @@ const autoprefixPlugin = new LessPluginAutoPrefix({
   ]
 });
 
-
 export interface IOutputFile {
   css: string;
   imports: string;
@@ -30,14 +29,3 @@ export function executeLess(lessPath: string) {
     }, (error: any) => reject(error));
   });
 }
-// exports = function executeLess(lessPath: string) {
-//   const lessStr = fs.readFileSync(lessPath);
-//   return new Promise((resolve, reject) => {
-//     less.render(lessStr.toString(), {
-//       plugins: [autoprefixPlugin]
-//     }).then((output: IOutputFile) => {
-//       output.less = lessStr.toString();
-//       resolve({ path: lessPath, output });
-//     }, (error: any) => reject(error));
-//   });
-// }
