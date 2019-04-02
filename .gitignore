@@ -1,0 +1,25 @@
+lib
+node_modules
+coverage
+
+npm-debug.log*
+lerna-debug.log
+yarn-error.log
+
+.DS_Store
+.cache
+.vscode
+.idea
+
+*.bak
+*.tem
+*.temp
+#.swp
+*.*~
+~*.*
+
+# IDEA
+*.iml
+*.ipr
+*.iws
+.idea/

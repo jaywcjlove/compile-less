@@ -1,0 +1,35 @@
+{
+  "name": "compile-less-cli",
+  "version": "1.0.0",
+  "description": "compile less",
+  "bin": {
+    "compile-less": ".bin/compile-less"
+  },
+  "scripts": {
+    "dev": "npm run compile -- --watch",
+    "compile": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaywcjlove/compile-less.git"
+  },
+  "author": "kenny wang <wowohoo@qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaywcjlove/compile-less/issues"
+  },
+  "homepage": "https://github.com/jaywcjlove/compile-less#readme",
+  "devDependencies": {
+    "@types/fs-extra": "^5.0.5",
+    "@types/node": "^11.13.0",
+    "typescript": "^3.4.1"
+  },
+  "dependencies": {
+    "commander": "^2.19.0",
+    "directory-tree": "^2.2.1",
+    "fs-extra": "^7.0.1",
+    "less": "^3.9.0",
+    "less-plugin-autoprefix": "^2.0.0",
+    "tslib": "^1.9.3"
+  }
+}
