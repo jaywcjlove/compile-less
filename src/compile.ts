@@ -6,12 +6,11 @@ import { executeLess, IOutputFile } from './executeLess';
 
 export interface ICompileOtion {
   out: string;
-  combine: string;
+  combine?: string;
 }
 
 module.exports = async function compile(dir: string, option: ICompileOtion) {
   const inputDir = path.join(process.cwd(), dir);
-  const outputDir = path.join(process.cwd(), option.out);
   const files: Array<string> = await getLessFiles(inputDir);
   const lessSource = await Promise.all(files.map(async (lessPath: string) => {
     return executeLess(lessPath);
@@ -23,6 +22,7 @@ module.exports = async function compile(dir: string, option: ICompileOtion) {
     await fs.outputFile(outputCssFile, cssStr.join(''));
     console.log('log:', 'Output one file: ->', outputCssFile);
   } else {
+    const outputDir = path.join(process.cwd(), option.out);
     await Promise.all(lessSource.map(async (item: IOutputFile) => {
       const logPathIn = item.path.replace(process.cwd(), '');
       item.path = item.path.replace(inputDir, outputDir).replace(/.less$/, '.css');

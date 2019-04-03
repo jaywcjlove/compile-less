@@ -26,7 +26,7 @@ program.on('--help', () => {
 
 program.parse(process.argv);
 
-if (!program.out || !program.dir) {
+if (!program.dir || (!program.out && !program.combine)) {
   program.outputHelp();
 } else {
   compile(program.dir, {
