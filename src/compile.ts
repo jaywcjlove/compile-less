@@ -11,28 +11,33 @@ export interface ICompileOtion {
 
 module.exports = async function compile(dir: string, option: ICompileOtion) {
   const inputDir = path.join(process.cwd(), dir);
-  const files: Array<string> = await getLessFiles(inputDir);
-  const lessSource = await Promise.all(files.map(async (lessPath: string) => {
-    return executeLess(lessPath);
-  }));
-
-  if (option.combine) {
-    const outputCssFile = path.join(process.cwd(), option.combine);
-    const cssStr: Array<string> = lessSource.map((item: IOutputFile) => item.css);
-    await fs.outputFile(outputCssFile, cssStr.join(''));
-    console.log('log:', 'Output one file: ->', outputCssFile);
-  } else {
-    const outputDir = path.join(process.cwd(), option.out);
-    await Promise.all(lessSource.map(async (item: IOutputFile) => {
-      const logPathIn = item.path.replace(process.cwd(), '');
-      item.path = item.path.replace(inputDir, outputDir).replace(/.less$/, '.css');
-      const logPathOut = item.path.replace(process.cwd(), '');
-      console.log('log:', logPathIn, '->', logPathOut);
-      await fs.outputFile(item.path, item.css);
-      if (item.imports && item.imports.length > 0) {
-        console.log('imports:', item.imports);
-      }
-      return item;
+  try {
+    const files: Array<string> = await getLessFiles(inputDir);
+    const lessSource = await Promise.all(files.map(async (lessPath: string) => {
+      return executeLess(lessPath);
     }));
+    console.log('lessSource:', lessSource);
+
+    if (option.combine) {
+      const outputCssFile = path.join(process.cwd(), option.combine);
+      const cssStr: Array<string> = lessSource.map((item: IOutputFile) => item.css);
+      await fs.outputFile(outputCssFile, cssStr.join(''));
+      console.log('log:', 'Output one file: ->', outputCssFile);
+    } else {
+      const outputDir = path.join(process.cwd(), option.out);
+      await Promise.all(lessSource.map(async (item: IOutputFile) => {
+        const logPathIn = item.path.replace(process.cwd(), '');
+        item.path = item.path.replace(inputDir, outputDir).replace(/.less$/, '.css');
+        const logPathOut = item.path.replace(process.cwd(), '');
+        console.log('log:', logPathIn, '->', logPathOut);
+        await fs.outputFile(item.path, item.css);
+        if (item.imports && item.imports.length > 0) {
+          console.log('imports:', item.imports);
+        }
+        return item;
+      }));
+    }
+  } catch (error) {
+    console.log('error:', error);
   }
 }

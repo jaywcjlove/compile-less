@@ -26,6 +26,8 @@ export function executeLess(lessPath: string) {
       output.less = lessStr.toString();
       output.path = lessPath;
       resolve(output);
-    }, (error: any) => reject(error));
+    }).catch((e: any) => {
+      reject(e);
+    });
   });
 }
