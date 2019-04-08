@@ -1,6 +1,7 @@
 lib
 node_modules
 coverage
+test/out
 
 npm-debug.log*
 lerna-debug.log
