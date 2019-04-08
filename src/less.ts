@@ -14,6 +14,7 @@ program
   .option('-d, --dir <dir-path>', 'Less file directory', 'src')
   .option('-o, --out <dir-path>', 'Output directory.')
   .option('-c, --combine <file-name>', 'Combine CSS files.')
+  .option('-r, --rm-global', 'Remove ":global" and ":global(className)".')
 
 program.on('--help', () => {
   logs('\n  Examples:');
@@ -32,5 +33,6 @@ if (!program.dir || (!program.out && !program.combine)) {
   compile(program.dir, {
     out: program.out,
     combine: program.combine,
+    rmGlobal: program.rmGlobal,
   });
 }

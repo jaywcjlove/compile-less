@@ -7,6 +7,7 @@ import { executeLess, IOutputFile } from './executeLess';
 export interface ICompileOtion {
   out: string;
   combine?: string;
+  rmGlobal?: boolean;
 }
 
 module.exports = async function compile(dir: string, option: ICompileOtion) {
@@ -14,9 +15,8 @@ module.exports = async function compile(dir: string, option: ICompileOtion) {
   try {
     const files: Array<string> = await getLessFiles(inputDir);
     const lessSource = await Promise.all(files.map(async (lessPath: string) => {
-      return executeLess(lessPath);
+      return executeLess(lessPath, option.rmGlobal);
     }));
-    console.log('lessSource:', lessSource);
 
     if (option.combine) {
       const outputCssFile = path.join(process.cwd(), option.combine);
