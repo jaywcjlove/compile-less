@@ -34,11 +34,13 @@ Options:
   -d, --dir <dir-path>       Less file directory (default: "src")
   -o, --out <dir-path>       Output directory.
   -c, --combine <file-name>  Combine CSS files.
+  -r, --rm-global            Remove ":global" and ":global(className)".
   -h, --help                 output usage information
 
   Examples:
 
-  $ compile-less -d src -o css
+  $ compile-less -d src -o out
+  $ compile-less -d src -o out --rm-global
   $ compile-less -d src -o out --combine out/dist.css
 ```
 
