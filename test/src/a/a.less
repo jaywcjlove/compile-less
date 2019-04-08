@@ -3,4 +3,16 @@
   div {
     border: 1px solid red;
   }
+  :global(.test) {
+    border: 1px solid red;
+  }
+}
+
+:global {
+  .a {
+    color: red;
+    div {
+      border: 1px solid red;
+    }
+  }
 }
