@@ -7,7 +7,7 @@
     "compile-less": ".bin/compile-less"
   },
   "scripts": {
-    "dev": "npm run compile -- --watch",
+    "dev": "npm run start -- --watch",
     "start": "tsc --removeComments"
   },
   "repository": {
