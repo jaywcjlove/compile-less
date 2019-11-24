@@ -3,6 +3,16 @@ body {
   padding: 0;
 }
 
+.a {
+  color: red;
+  div {
+    border: 1px solid red;
+  }
+  :global(.test) {
+    border: 1px solid red;
+  }
+}
+
 nav ul {
   &:extend(.inline);
   background: blue;
@@ -19,4 +29,25 @@ nav ul {
       border: 1px solid red;
     }
   }
+}
+
+
+:global {
+  /* BASICS */
+  .CodeMirror {
+    /* Set height, width, borders, and global font properties here */
+    font-family: monospace;
+    height: 300px;
+    color: black;
+    direction: ltr;
+  }
+
+  @media print {
+    /* Hide the cursor when printing */
+    .CodeMirror div.CodeMirror-cursors {
+      visibility: hidden;
+    }
+  }
+  /* Help users use markselection to safely style text background */
+  span.CodeMirror-selectedtext { background: none; }
 }

@@ -22,7 +22,7 @@
   "homepage": "https://github.com/jaywcjlove/compile-less#readme",
   "devDependencies": {
     "@types/fs-extra": "5.0.5",
-    "@types/less": "^3.0.0",
+    "@types/less": "^3.0.1",
     "@types/node": "11.13.0",
     "typescript": "3.4.1"
   },
@@ -30,7 +30,7 @@
     "commander": "2.19.0",
     "directory-tree": "2.2.1",
     "fs-extra": "7.0.1",
-    "less": "3.9.0",
+    "less": "^3.10.3",
     "less-plugin-autoprefix": "2.0.0",
     "tslib": "1.9.3"
   }
