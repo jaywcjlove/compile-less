@@ -4,7 +4,7 @@
   "description": "compile less",
   "main": "lib/compile.js",
   "bin": {
-    "compile-less": ".bin/compile-less"
+    "compile-less": "lib/cli.js"
   },
   "scripts": {
     "prepack": "npm run start",

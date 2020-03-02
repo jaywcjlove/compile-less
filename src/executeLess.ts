@@ -1,9 +1,8 @@
-const fs = require('fs-extra');
-// const path = require('path');
-const less = require('less');
-const { spawn } = require('child_process');
+import fs from 'fs-extra';
+import less from 'less';
+import { spawn } from 'child_process';
+import LessPluginAutoPrefix from 'less-plugin-autoprefix';
 
-const LessPluginAutoPrefix = require('less-plugin-autoprefix');
 const autoprefixPlugin = new LessPluginAutoPrefix({
   browsers: [
     ">0.2%",
@@ -44,8 +43,8 @@ export function executeLess(lessPath: string, rmGlobal?: boolean) {
   const lessStr = fs.readFileSync(lessPath);
   return new Promise((resolve, reject) => {
     less.render(lessStr.toString(), {
-      plugins: [autoprefixPlugin]
-    }).then(async (output: IOutputFile) => {
+      plugins: [autoprefixPlugin as Less.Plugin]
+    }).then(async (output: Less.RenderOutput & IOutputFile) => {
       output.less = lessStr.toString();
       if (rmGlobal) {
         output.css = output.css.replace(/:global\((.*)\)/g, '$1').replace(/:global/g, '');

@@ -10,7 +10,7 @@ export interface ICompileOtion {
   rmGlobal?: boolean;
 }
 
-module.exports = async function compile(dir: string, option: ICompileOtion) {
+export default async function compile(dir: string, option: ICompileOtion) {
   const inputDir = path.join(process.cwd(), dir);
   try {
     const files: Array<string> = await getLessFiles(inputDir);

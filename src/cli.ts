@@ -1,12 +1,13 @@
-const program = require('commander');
-const pkg = require('../package.json');
-const compile = require('./compile');
+#!/usr/bin/env node
+
+import program from 'commander';
+import compile from './compile';
 
 const logs = console.log;
 
 program
   .description('All .less files are output to a .css file.')
-  .version(pkg.version, '-v, --version')
+  .version(require('../package.json').version, '-v, --version')
   .usage('<command> [options]')
 
 
@@ -17,7 +18,7 @@ program
   .option('-r, --rm-global', 'Remove ":global" and ":global(className)".')
 
 program.on('--help', () => {
-  logs('\n  Examples:');
+  logs('\nExamples:');
   logs();
   logs('  $ compile-less -d src -o css');
   logs('  $ compile-less -d src -o out --combine out/dist.css');
