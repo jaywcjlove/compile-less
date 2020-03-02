@@ -9,7 +9,8 @@
   "scripts": {
     "prepack": "npm run start",
     "dev": "npm run start -- --watch",
-    "start": "tsc --removeComments"
+    "start": "tsc --removeComments",
+    "test": "node ./lib/cli.js -d test/src -o test/out --combine test/out/dist.css"
   },
   "repository": {
     "type": "git",
