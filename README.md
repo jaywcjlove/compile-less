@@ -34,13 +34,16 @@ Options:
   -d, --dir <dir-path>       Less file directory (default: "src")
   -o, --out <dir-path>       Output directory.
   -c, --combine <file-name>  Combine CSS files.
+  -w, --watch                Watch and compile CSS files.
+  --exclude-css              Exclude CSS file compilation.
   -r, --rm-global            Remove ":global" and ":global(className)".
-  -h, --help                 output usage information
+  -h, --help                 display help for command
 
-  Examples:
+Examples:
 
-  $ compile-less -d src -o out
-  $ compile-less -d src -o out --rm-global
+  $ compile-less -d src -o css
+  $ compile-less -d src -o css --watch
+  $ compile-less -d src -o css --watch --exclude-css
   $ compile-less -d src -o out --combine out/dist.css
 ```
 
@@ -49,8 +52,8 @@ Options:
 Listen for files compiled with TypeScript
 
 ```bash
-npm run dev
-npm run compile
+npm run start
+npm run build
 ```
 
 ```bash

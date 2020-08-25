@@ -39,7 +39,7 @@ export function execute(command: string) {
   });
 }
 
-export function executeLess(lessPath: string, rmGlobal?: boolean) {
+export function executeLess(lessPath: string, rmGlobal?: boolean): Promise<IOutputFile> {
   const lessStr = fs.readFileSync(lessPath);
   return new Promise((resolve, reject) => {
     less.render(lessStr.toString(), {
