@@ -12,9 +12,7 @@ const autoprefixPlugin = new LessPluginAutoPrefix({
   ]
 });
 
-export interface IOutputFile {
-  css: string;
-  imports: string;
+export interface IOutputFile extends Less.RenderOutput {
   path: string;
   less?: string;
 }
