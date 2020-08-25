@@ -30,7 +30,7 @@
     "compile"
   ],
   "devDependencies": {
-    "@types/fs-extra": "5.0.5",
+    "@types/fs-extra": "9.0.1",
     "@types/less": "3.0.1",
     "@types/node": "11.13.0",
     "typescript": "4.0.2"
