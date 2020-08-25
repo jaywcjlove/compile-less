@@ -13,5 +13,5 @@ jobs:
         node-version: '12'
 
     - run: npm install
-    - run: npm run start
+    - run: npm run build
     - run: npm run test
