@@ -38,7 +38,7 @@
   "dependencies": {
     "commander": "^4.1.1",
     "directory-tree": "^2.2.4",
-    "fs-extra": "^8.1.0",
+    "fs-extra": "^9.0.1",
     "less": "^3.12.2",
     "less-plugin-autoprefix": "2.0.0",
     "tslib": "^2.0.1"
