@@ -7,7 +7,7 @@
     "compile-less": "lib/cli.js"
   },
   "scripts": {
-    "prepack": "npm run start",
+    "prepack": "npm run build",
     "start": "npm run start -- --watch",
     "build": "tsc --removeComments",
     "test": "node ./lib/cli.js -d test/src -o test/out",
