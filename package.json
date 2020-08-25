@@ -39,7 +39,7 @@
     "commander": "^4.1.1",
     "directory-tree": "^2.2.4",
     "fs-extra": "^8.1.0",
-    "less": "^3.11.1",
+    "less": "^3.12.2",
     "less-plugin-autoprefix": "2.0.0",
     "tslib": "^1.11.1"
   }
