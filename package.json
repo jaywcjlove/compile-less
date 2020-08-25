@@ -33,7 +33,7 @@
     "@types/fs-extra": "5.0.5",
     "@types/less": "3.0.1",
     "@types/node": "11.13.0",
-    "typescript": "3.8.3"
+    "typescript": "4.0.2"
   },
   "dependencies": {
     "commander": "^4.1.1",
@@ -41,6 +41,6 @@
     "fs-extra": "^8.1.0",
     "less": "^3.12.2",
     "less-plugin-autoprefix": "2.0.0",
-    "tslib": "^1.11.1"
+    "tslib": "^2.0.1"
   }
 }
