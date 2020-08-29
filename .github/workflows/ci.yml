@@ -1,4 +1,4 @@
-name: GitHub Actions Deploy compile-less-cli
+name: Build compile-less
 on:
   push:
     branches:
