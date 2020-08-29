@@ -1,6 +1,13 @@
 compile-less
 ===
 
+![Build compile-less](https://github.com/jaywcjlove/compile-less/workflows/Build%20compile-less/badge.svg)
+[![](https://img.shields.io/github/issues/jaywcjlove/compile-less.svg)](https://github.com/jaywcjlove/compile-less/issues)
+[![](https://img.shields.io/github/forks/jaywcjlove/compile-less.svg)](https://github.com/jaywcjlove/compile-less/network)
+[![](https://img.shields.io/github/stars/jaywcjlove/compile-less.svg)](https://github.com/jaywcjlove/compile-less/stargazers)
+[![](https://img.shields.io/github/release/jaywcjlove/compile-less)](https://github.com/jaywcjlove/compile-less/releases)
+[![](https://img.shields.io/npm/v/compile-less-cli.svg)](https://www.npmjs.com/package/compile-less-cli)
+
 All `.less` files are compiled into `.css` files.
 
 ### Install
