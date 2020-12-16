@@ -41,7 +41,7 @@
   "dependencies": {
     "@types/fs-extra": "9.0.1",
     "@types/less": "3.0.2",
-    "@types/node": "14.6.0",
+    "@types/node": "14.14.14",
     "chokidar": "3.4.2",
     "commander": "6.1.0",
     "directory-tree": "2.2.4",
