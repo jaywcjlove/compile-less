@@ -37,14 +37,20 @@ export function execute(command: string) {
   });
 }
 
-export function executeLess(lessPath: string, rmGlobal?: boolean): Promise<IOutputFile> {
+export type ExecuteLessOptions = Less.Options & {
+  rmGlobal?: boolean;
+}
+
+export function executeLess(lessPath: string, options?: ExecuteLessOptions): Promise<IOutputFile> {
   const lessStr = fs.readFileSync(lessPath);
+  const { rmGlobal, ...other } = options || {};
   return new Promise((resolve, reject) => {
     const options: Less.Options = {
       depends: false,
       compress: false,
       lint: false,
       plugins: [autoprefixPlugin as Less.Plugin],
+      ...other,
       filename: lessPath,
     }
 

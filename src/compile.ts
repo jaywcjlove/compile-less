@@ -12,20 +12,21 @@ export interface ICompileOtion {
 }
 
 export default async function compile(dir: string, option: ICompileOtion) {
+  const { excludeCss, rmGlobal, combine, out, ...otherOpts } = option || {};
   const inputDir = path.join(process.cwd(), dir);
   try {
-    const files: Array<string> = await getLessFiles(inputDir, option.excludeCss ? /\.(less)$/ : undefined);
+    const files: Array<string> = await getLessFiles(inputDir, excludeCss ? /\.(less)$/ : undefined);
     const lessSource = await Promise.all(files.map(async (lessPath: string) => {
-      return executeLess(lessPath, option.rmGlobal);
+      return executeLess(lessPath, { rmGlobal, ...otherOpts });
     }));
 
-    if (option.combine) {
-      const outputCssFile = path.join(process.cwd(), option.combine);
+    if (combine) {
+      const outputCssFile = path.join(process.cwd(), combine);
       const cssStr: Array<string> = lessSource.map((item: IOutputFile) => item.css);
       await fs.outputFile(outputCssFile, cssStr.join(''));
-      console.log('log:', 'Output one file: ->', outputCssFile);
+      console.log('♻️ \x1b[32m =>\x1b[0m:', 'Output one file: ->', outputCssFile);
     } else {
-      const outputDir = path.join(process.cwd(), option.out);
+      const outputDir = path.join(process.cwd(), out);
       await Promise.all(lessSource.map(async (item: IOutputFile) => {
         return outputFile(item, inputDir, outputDir);
       }));
@@ -40,10 +41,10 @@ export async function outputFile(data: IOutputFile, inputDir: string, outputDir:
     const logPathIn = data.path.replace(process.cwd(), '');
     data.path = data.path.replace(inputDir, outputDir).replace(/.less$/, '.css');
     const logPathOut = data.path.replace(process.cwd(), '');
-    console.log('log:', logPathIn, '->', logPathOut);
+    console.log('♻️ \x1b[32m =>\x1b[0m:', logPathIn, '->', logPathOut);
     await fs.outputFile(data.path, data.css);
     if (data.imports && data.imports.length > 0) {
-      console.log('imports:', data.imports);
+      console.log('\x1b[35m imports \x1b[0m:', data.imports);
     }
   } catch (error) {
     throw error;

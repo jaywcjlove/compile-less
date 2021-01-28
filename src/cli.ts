@@ -94,7 +94,7 @@ async function chokidarWatch(eventName: 'add'|'addDir'|'change'|'unlink'|'unlink
           rmGlobal: argvs['rm-global'],
         });
       }
-      const lessSource = await executeLess(changePath, argvs['rm-global']);
+      const lessSource = await executeLess(changePath, { rmGlobal: argvs['rm-global'] } );
       outputFile(
         lessSource,
         path.join(process.cwd(), argvs.dir),
