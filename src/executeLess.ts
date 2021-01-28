@@ -40,15 +40,31 @@ export function execute(command: string) {
 export function executeLess(lessPath: string, rmGlobal?: boolean): Promise<IOutputFile> {
   const lessStr = fs.readFileSync(lessPath);
   return new Promise((resolve, reject) => {
-    less.render(lessStr.toString(), {
-      plugins: [autoprefixPlugin as Less.Plugin]
-    }).then(async (output: Less.RenderOutput & IOutputFile) => {
-      output.less = lessStr.toString();
+    const options: Less.Options = {
+      depends: false,
+      compress: false,
+      lint: false,
+      plugins: [autoprefixPlugin as Less.Plugin],
+      filename: lessPath,
+    }
+
+    let lessStrTo = lessStr.toString();
+    if (rmGlobal) {
+      lessStrTo = lessStrTo.replace(/:global\((.*)\)/g, '$1');
+    }
+    less.render(lessStrTo, options).then((output: Less.RenderOutput) => {
       if (rmGlobal) {
-        output.css = output.css.replace(/:global\((.*)\)/g, '$1').replace(/:global/g, '');
+        output.css = output.css.replace(/:global\s+\{([\s\S]*?)(\s.+)?\}/g, '')
+          .replace(/(:global\s+)|(\s.+:global\s+)/g, '')
       }
-      output.path = lessPath;
-      resolve(output);
+      resolve({
+        less: lessStr.toString(),
+        path: lessPath,
+        // css: '',
+        // map: 'string',
+        // imports: [],
+        ...output,
+      });
     }).catch((e: any) => {
       reject(e);
     });
