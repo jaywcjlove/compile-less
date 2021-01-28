@@ -7,9 +7,12 @@
     "compile-less": "lib/cli.js"
   },
   "scripts": {
-    "prepack": "npm run build",
-    "start": "npm run build -- --watch",
-    "build": "tsc --removeComments",
+    "prepare": "npm run build",
+    "watch": "npm run watch:ts & npm run build:types -- --watch",
+    "watch:ts": "tsbb watch",
+    "build": "npm run build:ts && npm run build:types",
+    "build:ts": "tsbb build",
+    "build:types": "tsbb types",
     "test": "node ./lib/cli.js -d test/src -o test/out",
     "test:watch": "node ./lib/cli.js -d test/src -o test/out --combine test/out/dist.css --watch",
     "test:watch2": "node ./lib/cli.js -d test/src -o test/out --watch --exclude-css"
@@ -36,7 +39,7 @@
     "src"
   ],
   "devDependencies": {
-    "typescript": "4.1.3"
+    "tsbb": "2.0.5"
   },
   "dependencies": {
     "@types/fs-extra": "9.0.5",
@@ -47,7 +50,6 @@
     "directory-tree": "2.2.4",
     "fs-extra": "9.0.1",
     "less": "3.13.0",
-    "less-plugin-autoprefix": "2.0.0",
-    "tslib": "2.0.3"
+    "less-plugin-autoprefix": "2.0.0"
   }
 }
