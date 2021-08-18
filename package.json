@@ -39,7 +39,7 @@
     "src"
   ],
   "devDependencies": {
-    "tsbb": "2.2.0"
+    "tsbb": "2.3.1"
   },
   "dependencies": {
     "@types/fs-extra": "9.0.11",
