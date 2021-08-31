@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./lib",
+    "baseUrl": ".",
     "target": "es5",
     "lib": [
       "es2015",
@@ -24,10 +24,5 @@
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true
-  },
-  "exclude": [
-    "node_modules",
-    ".bin",
-    "lib"
-  ]
+  }
 }
