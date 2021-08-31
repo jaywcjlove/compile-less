@@ -45,9 +45,9 @@ export default async function compile(dir: string, option: ICompileOtion) {
 
 export async function outputFile(data: IOutputFile, inputDir: string, outputDir: string) {
   try {
-    const logPathIn = data.path.replace(process.cwd(), '');
+    const logPathIn = path.relative(process.cwd(), data.path);
     data.path = data.path.replace(inputDir, outputDir).replace(/.less$/, '.css');
-    const logPathOut = data.path.replace(process.cwd(), '');
+    const logPathOut = path.relative(process.cwd(), data.path);
     await log(logPathOut, logPathIn);
     await fs.outputFile(data.path, data.css);
     if (data.imports && data.imports.length > 0) {
@@ -62,8 +62,8 @@ async function log(output: string, input?: string) {
   const pkg = await readPkgUp();
   const projectName = pkg ? pkg?.packageJson.name : '';
   if (input) {
-    console.log(`♻️ \x1b[32m ${projectName} =>\x1b[0m:`, input, '->', output);
+    console.log(`♻️ \x1b[32m ${projectName}\x1b[0m:`, input, '┈>', output);
   } else {
-    console.log(`♻️ \x1b[32m ${projectName} =>\x1b[0m:`, 'Output one file: ->', output);
+    console.log(`♻️ \x1b[32m ${projectName}\x1b[0m:`, 'Output one file: ┈>', output);
   }
 }
