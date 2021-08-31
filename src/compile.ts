@@ -28,7 +28,7 @@ export default async function compile(dir: string, option: ICompileOtion) {
       const cssStr: Array<string> = lessSource.map((item: IOutputFile) => item.css);
       if (!!cssStr.join('').trim()) {
         await fs.outputFile(outputCssFile, cssStr.join(''));
-        await log(outputCssFile);
+        await log(path.relative(process.cwd(), outputCssFile));
       } else {
         console.log(`🚧 \x1b[35m${projectName}\x1b[0m =>\x1b[33m No content is output.\x1b[0m`);
       }
