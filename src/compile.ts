@@ -30,7 +30,7 @@ export default async function compile(dir: string, option: ICompileOtion) {
         await fs.outputFile(outputCssFile, cssStr.join(''));
         await log(outputCssFile);
       } else {
-        console.log(`🚧\x1b[33m ${projectName} No content is output.\x1b[0m`);
+        console.log(`🚧'\x1b[35m${projectName}\x1b[0m =>\x1b[33m No content is output.\x1b[0m`);
       }
     } else {
       const outputDir = path.join(process.cwd(), out);
