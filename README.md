@@ -2,7 +2,7 @@ compile-less
 ===
 
 ![Build compile-less](https://github.com/jaywcjlove/compile-less/workflows/Build%20compile-less/badge.svg)
-[![npm download](https://img.shields.io/npm/dm/@uiw/react-amap.svg?style=flat)](https://www.npmjs.com/package/@uiw/react-amap)
+[![npm download](https://img.shields.io/npm/dm/compile-less-cli.svg?style=flat)](https://www.npmjs.com/package/compile-less-cli)
 [![releases version](https://img.shields.io/github/release/jaywcjlove/compile-less)](https://github.com/jaywcjlove/compile-less/releases)
 [![npm version](https://img.shields.io/npm/v/compile-less-cli.svg)](https://www.npmjs.com/package/compile-less-cli)
 
