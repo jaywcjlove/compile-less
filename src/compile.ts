@@ -23,8 +23,12 @@ export default async function compile(dir: string, option: ICompileOtion) {
     if (combine) {
       const outputCssFile = path.join(process.cwd(), combine);
       const cssStr: Array<string> = lessSource.map((item: IOutputFile) => item.css);
-      await fs.outputFile(outputCssFile, cssStr.join(''));
-      console.log('♻️ \x1b[32m =>\x1b[0m:', 'Output one file: ->', outputCssFile);
+      if (!!cssStr.join('').trim()) {
+        await fs.outputFile(outputCssFile, cssStr.join(''));
+        console.log('♻️ \x1b[32m =>\x1b[0m:', 'Output one file: ->', outputCssFile);
+      } else {
+        console.log('🚧\x1b[33m No content is output.\x1b[0m');
+      }
     } else {
       const outputDir = path.join(process.cwd(), out);
       await Promise.all(lessSource.map(async (item: IOutputFile) => {
