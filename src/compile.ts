@@ -44,7 +44,7 @@ export async function outputFile(data: IOutputFile, inputDir: string, outputDir:
     console.log('♻️ \x1b[32m =>\x1b[0m:', logPathIn, '->', logPathOut);
     await fs.outputFile(data.path, data.css);
     if (data.imports && data.imports.length > 0) {
-      console.log('\x1b[35m imports \x1b[0m:', data.imports);
+      // console.log('\x1b[35m imports-> \x1b[0m:', data.imports);
     }
   } catch (error) {
     throw error;

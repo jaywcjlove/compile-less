@@ -1,6 +1,7 @@
 import fs from 'fs-extra';
 import less from 'less';
 import { spawn } from 'child_process';
+// @ts-ignore
 import LessPluginAutoPrefix from 'less-plugin-autoprefix';
 
 const autoprefixPlugin = new LessPluginAutoPrefix({

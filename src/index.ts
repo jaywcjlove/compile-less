@@ -21,7 +21,6 @@ function outputHelp() {
   console.log('   -r, --rm-global,', 'Remove ":global" and ":global(className)".');
   exampleHelp();
 }
-
 const argvs = minimist(process.argv.slice(2));
 if (argvs.h || argvs.help) {
   outputHelp()
