@@ -39,7 +39,7 @@
     "tsbb": "3.0.1"
   },
   "dependencies": {
-    "@types/fs-extra": "9.0.12",
+    "@types/fs-extra": "9.0.13",
     "@types/less": "3.0.3",
     "@types/minimist": "1.2.2",
     "@types/node": "16.7.8",
