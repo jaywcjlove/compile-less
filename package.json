@@ -44,7 +44,7 @@
     "@types/minimist": "1.2.2",
     "@types/node": "16.7.8",
     "chokidar": "3.5.2",
-    "directory-tree": "2.3.1",
+    "directory-tree": "3.0.0",
     "fs-extra": "10.0.0",
     "read-pkg-up": "7.0.1",
     "less": "4.1.1",
