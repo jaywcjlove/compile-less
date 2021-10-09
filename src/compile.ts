@@ -58,12 +58,12 @@ export async function outputFile(data: IOutputFile, inputDir: string, outputDir:
   }
 }
 
-async function log(output: string, input?: string) {
+export async function log(output: string, input?: string) {
   const pkg = await readPkgUp();
   const projectName = pkg ? pkg?.packageJson.name : '';
   if (input) {
-    console.log(`♻️ \x1b[32m ${projectName}\x1b[0m:`, input, '┈>', output);
+    console.log(`♻️ \x1b[32m ${projectName}\x1b[0m: ${input} ┈> ${output}`);
   } else {
-    console.log(`♻️ \x1b[32m ${projectName}\x1b[0m:`, 'Output one file: ┈>', output);
+    console.log(`♻️ \x1b[32m ${projectName}\x1b[0m: Output one file: ┈> ${output}`);
   }
 }

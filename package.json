@@ -10,9 +10,11 @@
     "prepare": "npm run build",
     "watch": "tsbb watch --disable-babel --no-esm",
     "build": "tsbb build --disable-babel --no-esm",
-    "test": "node ./lib/index.js -d test/src -o test/out",
-    "test:watch": "node ./lib/index.js -d test/src -o test/out --combine test/out/dist.css --watch",
-    "test:watch2": "node ./lib/index.js -d test/src -o test/out --watch --exclude-css"
+    "test": "npm run build && tsbb test",
+    "coverage": "tsbb test --coverage",
+    "example:test": "node ./lib/index.js -d test/src -o test/out",
+    "example:test:watch": "node ./lib/index.js -d test/src -o test/out --combine test/out/dist.css --watch",
+    "example:test:watch2": "node ./lib/index.js -d test/src -o test/out --watch --exclude-css"
   },
   "repository": {
     "type": "git",
