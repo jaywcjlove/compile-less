@@ -5,6 +5,7 @@ compile-less
 [![npm download](https://img.shields.io/npm/dm/compile-less-cli.svg?style=flat)](https://www.npmjs.com/package/compile-less-cli)
 [![releases version](https://img.shields.io/github/release/jaywcjlove/compile-less)](https://github.com/jaywcjlove/compile-less/releases)
 [![npm version](https://img.shields.io/npm/v/compile-less-cli.svg)](https://www.npmjs.com/package/compile-less-cli)
+[![Coverage Status](https://jaywcjlove.github.io/compile-less/badges.svg)](https://jaywcjlove.github.io/compile-less/lcov-report/)
 
 All `.less` files are compiled into `.css` files.
 
