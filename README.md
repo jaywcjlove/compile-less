@@ -9,13 +9,13 @@ compile-less
 
 All `.less` files are compiled into `.css` files.
 
-### Install
+## Install
 
 ```bash
 npm i compile-less-cli --save-dev
 ```
 
-### Basic Usage
+## Basic Usage
 
 ```js
 const compileLess = require('compile-less-cli');
@@ -26,7 +26,7 @@ compileLess('src', {
 });
 ```
 
-### Command Line
+## Command Line
 
 Command help: 
 
@@ -53,7 +53,7 @@ Examples:
   $ compile-less -d src -o out --combine out/dist.css
 ```
 
-### Development
+## Development
 
 Listen for files compiled with TypeScript
 
@@ -66,3 +66,8 @@ npm run build
 cd test
 compile-less -d src -o out
 ```
+
+
+## License
+
+Licensed under the MIT License.
