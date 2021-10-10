@@ -27,14 +27,14 @@
         <a href="https://jaywcjlove.github.io/compile-less/lcov-report/"><img src="https://jaywcjlove.github.io/compile-less/badges.svg" alt="Coverage Status"></a>
       </p>
       <p>All <code>.less</code> files are compiled into <code>.css</code> files.</p>
-      <h3 id="install"><a class="anchor" aria-hidden="true" tabindex="-1" href="#install"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+      <h2 id="install"><a class="anchor" aria-hidden="true" tabindex="-1" href="#install"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
             <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-          </svg></a>Install</h3>
+          </svg></a>Install</h2>
       <pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> i compile-less-cli --save-dev
 </code></pre>
-      <h3 id="basic-usage"><a class="anchor" aria-hidden="true" tabindex="-1" href="#basic-usage"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+      <h2 id="basic-usage"><a class="anchor" aria-hidden="true" tabindex="-1" href="#basic-usage"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
             <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-          </svg></a>Basic Usage</h3>
+          </svg></a>Basic Usage</h2>
       <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> compileLess <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'compile-less-cli'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token function">compileLess</span><span class="token punctuation">(</span><span class="token string">'src'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
@@ -42,9 +42,9 @@
   combine<span class="token operator">:</span> <span class="token string">'dist/uiw.css'</span><span class="token punctuation">,</span> <span class="token comment">// Combine CSS files.</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-      <h3 id="command-line"><a class="anchor" aria-hidden="true" tabindex="-1" href="#command-line"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+      <h2 id="command-line"><a class="anchor" aria-hidden="true" tabindex="-1" href="#command-line"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
             <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-          </svg></a>Command Line</h3>
+          </svg></a>Command Line</h2>
       <p>Command help:</p>
       <pre class="language-bash"><code class="language-bash">Usage: compile-less <span class="token operator">&#x3C;</span>command<span class="token operator">></span> <span class="token punctuation">[</span>options<span class="token punctuation">]</span>
 
@@ -67,9 +67,9 @@ Examples:
   $ compile-less -d src -o css --watch --exclude-css
   $ compile-less -d src -o out --combine out/dist.css
 </code></pre>
-      <h3 id="development"><a class="anchor" aria-hidden="true" tabindex="-1" href="#development"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+      <h2 id="development"><a class="anchor" aria-hidden="true" tabindex="-1" href="#development"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
             <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-          </svg></a>Development</h3>
+          </svg></a>Development</h2>
       <p>Listen for files compiled with TypeScript</p>
       <pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> run start
 <span class="token function">npm</span> run build
@@ -77,6 +77,10 @@ Examples:
       <pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">cd</span> <span class="token builtin class-name">test</span>
 compile-less -d src -o out
 </code></pre>
+      <h2 id="license"><a class="anchor" aria-hidden="true" tabindex="-1" href="#license"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+            <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+          </svg></a>License</h2>
+      <p>Licensed under the MIT License.</p>
     </div>
   </body>
 </html>
