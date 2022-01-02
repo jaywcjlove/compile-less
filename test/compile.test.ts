@@ -21,6 +21,16 @@ it('compile = rmGlobal test case', async () => {
   expect(dist.indexOf(':global .a div') === -1).toBeTruthy();
 });
 
+it('autoprefix test case', async () => {
+  await compile('test/src', {
+    out: 'test/out',
+    combine: 'test/out/dist.css',
+    rmGlobal: true,
+  });
+  const dist = await fs.readFile('test/out/dist.css');
+  expect(dist.indexOf('-webkit-user-select') > -1).toBeTruthy();
+});
+
 it('Folder undefined test case', async () => {
   console.log = jest.fn();
   await compile('test/srcs', {
