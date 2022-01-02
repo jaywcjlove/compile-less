@@ -1,28 +1,21 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "target": "ES5",
-    "lib": [
-      "es2015",
-      "es6",
-      "dom"
-    ],
-    "allowSyntheticDefaultImports": true,
-    "declaration": true,
+    "target": "es5",
+    "lib": ["es2015", "es6"],
+    "allowJs": true,
+    "skipLibCheck": true,
     "esModuleInterop": true,
-    "isolatedModules": false,
-    "sourceMap": false,
-    "allowJs": false,
-    "moduleResolution": "node",
-    "rootDir": "src",
-    "outDir": "lib",
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noImplicitAny": true,
-    "importHelpers": true,
-    "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true
+    "module": "esnext",
+    "isolatedModules": true,
+    "declaration": true,
+    "baseUrl": ".",
+    "outDir": "lib",
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "noEmit": true
   }
 }
