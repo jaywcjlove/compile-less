@@ -23,7 +23,7 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.64% </span>
+                <span class="strong">63.63% </span>
                 <span class="quiet">Statements</span>
                 <span class='fraction'>21/33</span>
             </div>
@@ -37,7 +37,7 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.67% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
                 <span class='fraction'>4/6</span>
             </div>
@@ -54,6 +54,12 @@
         <p class="quiet">
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input oninput="onInput()" type="search" id="fileSearch">
+            </div>
+        </template>
     </div>
     <div class='status-line medium'></div>
     <pre><table class="coverage">
@@ -140,22 +146,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -186,12 +192,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
 import path from 'path';
@@ -218,7 +224,7 @@ export default async function compile(dir: string, option: ICompileOtion) {
       return executeLess(lessPath, { rmGlobal, ...otherOpts });
     }));
 &nbsp;
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (combine) {
+    if (combine) {
       const outputCssFile = path.join(process.cwd(), combine);
       const cssStr: Array&lt;string&gt; = lessSource.map((item: IOutputFile) =&gt; item.css);
       if (!!cssStr.join('').trim()) {
@@ -227,7 +233,7 @@ export default async function compile(dir: string, option: ICompileOtion) {
       } else {
         console.log(`🚧 \x1b[35m${projectName}\x1b[0m =&gt;\x1b[33m No content is output.\x1b[0m`);
       }
-    } else {
+    } else <span class="missing-if-branch" title="else path not taken" >E</span>{
       const outputDir = <span class="cstat-no" title="statement not covered" >path.join(process.cwd(), out);</span>
 <span class="cstat-no" title="statement not covered" >      await Promise.all(lessSource.map(<span class="fstat-no" title="function not covered" >as</span>ync (item: IOutputFile) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        return outputFile(item, inputDir, outputDir);</span>
@@ -267,10 +273,9 @@ export async function log(output: string, input?: string) {
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
-                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sun Oct 10 2021 00:12:43 GMT+0000 (Coordinated Universal Time)
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at Sun Jan 02 2022 18:58:44 GMT+0000 (Coordinated Universal Time)
             </div>
-        </div>
         <script src="prettify.js"></script>
         <script>
             window.onload = function () {
