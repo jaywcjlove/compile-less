@@ -50,7 +50,7 @@
     "directory-tree": "3.0.1",
     "fs-extra": "10.0.0",
     "postcss": "8.4.5",
-    "read-pkg-up": "7.0.1",
+    "read-pkg-up": "9.1.0",
     "less": "4.1.2",
     "less-plugin-autoprefix": "2.0.0",
     "minimist": "1.2.5"
