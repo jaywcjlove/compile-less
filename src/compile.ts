@@ -1,7 +1,5 @@
-
 import path from 'path';
 import fs from 'fs-extra';
-import readPkgUp from 'read-pkg-up';
 import { getLessFiles } from './getLessFiles';
 import { executeLess, IOutputFile } from './executeLess';
 
@@ -12,12 +10,21 @@ export interface ICompileOtion {
   excludeCss?: boolean;
 }
 
+export async function getProjectName() {
+  const pkgPath = path.resolve(process.cwd(), 'package.json');
+  let projectName = '';
+  if (fs.existsSync(pkgPath)) {
+    const pkg = await fs.readJSON(pkgPath);
+    projectName = pkg.name;
+  }
+  return projectName
+}
+
 export default async function compile(dir: string, option: ICompileOtion) {
   const { excludeCss, rmGlobal, combine, out, ...otherOpts } = option || {};
   const inputDir = path.join(process.cwd(), dir);
   try {
-    const pkg = await readPkgUp();
-    const projectName = pkg ? pkg?.packageJson.name : '';
+    const projectName = await getProjectName();
     const files: Array<string> = await getLessFiles(inputDir, excludeCss ? /\.(less)$/ : undefined);
     const lessSource = await Promise.all(files.map(async (lessPath: string) => {
       return executeLess(lessPath, { rmGlobal, ...otherOpts });
@@ -59,8 +66,7 @@ export async function outputFile(data: IOutputFile, inputDir: string, outputDir:
 }
 
 export async function log(output: string, input?: string) {
-  const pkg = await readPkgUp();
-  const projectName = pkg ? pkg?.packageJson.name : '';
+  const projectName = await getProjectName();
   if (input) {
     console.log(`♻️ \x1b[32m ${projectName}\x1b[0m: ${input} ┈> ${output}`);
   } else {
