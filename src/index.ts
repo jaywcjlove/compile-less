@@ -64,7 +64,9 @@ if (!argvs.dir || (!argvs.out && !argvs.combine)) {
       });
     }
   } catch (error) {
-    console.log(`\x1b[31m${error.message}\x1b[0m`);
+    if (error instanceof TypeError) {
+      console.log(`compile-less: \x1b[31m${error.message}\x1b[0m`);
+    }
     console.log(error);
     process.exit(1);
   }
