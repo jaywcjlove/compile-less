@@ -1,8 +1,9 @@
 {
   "name": "compile-less-cli",
-  "version": "1.8.13",
+  "version": "1.8.14",
   "description": "All `.less` files are compiled into `.css` files.",
-  "main": "lib/compile.js",
+  "main": "./lib/compile.js",
+  "types": "./lib/compile.d.ts",
   "bin": {
     "compile-less": "lib/index.js"
   },
