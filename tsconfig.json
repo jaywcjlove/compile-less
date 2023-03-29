@@ -1,20 +1,15 @@
 {
+  "$schema": "http://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["es2015", "es6"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "module": "commonjs",
+    "target": "esnext",
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
+    "esModuleInterop": true,
+
     "declaration": true,
-    "baseUrl": ".",
-    "outDir": "lib",
-    "noFallthroughCasesInSwitch": true,
-    "resolveJsonModule": true,
-    "moduleResolution": "node",
-    "noEmit": true
-  }
+    "sourceMap": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
