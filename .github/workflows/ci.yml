@@ -28,11 +28,15 @@ jobs:
           output: coverage/CONTRIBUTORS.svg
           avatarSize: 42
 
-      - name: Converts Markdown to HTML
-        uses: jaywcjlove/markdown-to-html-cli@main
-        with:
-          output: coverage/index.html
-          favicon: data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛱️</text></svg>
+      - run: npm install idoc@1.25.0 -g
+      - run: idoc -s "Compile Less {{version}}"
+      - run: cp -rp dist/* coverage
+
+      # - name: Converts Markdown to HTML
+      #   uses: jaywcjlove/markdown-to-html-cli@main
+      #   with:
+      #     output: coverage/index.html
+      #     favicon: data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛱️</text></svg>
 
       - name: Create Tag
         id: create_tag
