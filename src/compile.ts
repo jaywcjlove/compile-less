@@ -3,7 +3,7 @@ import fs from 'fs-extra';
 import { getLessFiles } from './getLessFiles';
 import { executeLess, IOutputFile } from './executeLess';
 
-export interface ICompileOtion {
+export interface ICompileOption {
   out: string;
   combine?: string;
   rmGlobal?: boolean;
@@ -20,7 +20,7 @@ export async function getProjectName() {
   return projectName
 }
 
-export default async function compile(dir: string, option: ICompileOtion) {
+export default async function compile(dir: string, option: ICompileOption) {
   const { excludeCss, rmGlobal, combine, out, ...otherOpts } = option || {};
   const inputDir = path.join(process.cwd(), dir);
   try {
