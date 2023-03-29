@@ -1,7 +1,7 @@
 compile-less
 ===
 
-![Build compile-less](https://github.com/jaywcjlove/compile-less/workflows/Build%20compile-less/badge.svg)
+[![CI](https://github.com/jaywcjlove/compile-less/actions/workflows/ci.yml/badge.svg)](https://github.com/jaywcjlove/compile-less/actions/workflows/ci.yml)
 [![npm download](https://img.shields.io/npm/dm/compile-less-cli.svg?style=flat)](https://www.npmjs.com/package/compile-less-cli)
 [![releases version](https://img.shields.io/github/release/jaywcjlove/compile-less)](https://github.com/jaywcjlove/compile-less/releases)
 [![npm version](https://img.shields.io/npm/v/compile-less-cli.svg)](https://www.npmjs.com/package/compile-less-cli)
