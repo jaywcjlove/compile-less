@@ -1,6 +1,6 @@
 {
   "name": "compile-less-cli",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "All `.less` files are compiled into `.css` files.",
   "homepage": "https://github.com/jaywcjlove/compile-less#readme",
   "funding": "https://jaywcjlove.github.io/#/sponsor",
