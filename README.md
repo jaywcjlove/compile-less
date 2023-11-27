@@ -1,6 +1,7 @@
 compile-less
 ===
 
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
 [![CI](https://github.com/jaywcjlove/compile-less/actions/workflows/ci.yml/badge.svg)](https://github.com/jaywcjlove/compile-less/actions/workflows/ci.yml)
 [![npm download](https://img.shields.io/npm/dm/compile-less-cli.svg?style=flat)](https://www.npmjs.com/package/compile-less-cli)
 [![releases version](https://img.shields.io/github/release/jaywcjlove/compile-less)](https://github.com/jaywcjlove/compile-less/releases)

@@ -2,6 +2,8 @@
   "name": "compile-less-cli",
   "version": "1.9.0",
   "description": "All `.less` files are compiled into `.css` files.",
+  "homepage": "https://github.com/jaywcjlove/compile-less#readme",
+  "funding": "https://jaywcjlove.github.io/#/sponsor",
   "main": "./lib/compile.js",
   "types": "./lib/compile.d.ts",
   "bin": {
@@ -26,7 +28,6 @@
   "bugs": {
     "url": "https://github.com/jaywcjlove/compile-less/issues"
   },
-  "homepage": "https://github.com/jaywcjlove/compile-less#readme",
   "keywords": [
     "less",
     "css",
